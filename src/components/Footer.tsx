@@ -6,7 +6,6 @@ const Footer = () => {
     <footer className="bg-toyama-beige-dark text-toyama-brown pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About Section */}
           <div>
             <h3 className="text-toyama-orange text-xl font-dancing mb-4">Letícia Toyama</h3>
             <p className="mb-4">Artesanato, floricultura e sobremesas personalizadas para tornar seus momentos especiais ainda mais marcantes.</p>
@@ -28,7 +27,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="text-toyama-orange text-xl font-dancing mb-4">Contato</h3>
             <ul className="space-y-3">
@@ -47,7 +45,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-toyama-orange text-xl font-dancing mb-4">Links Rápidos</h3>
             <ul className="space-y-2">

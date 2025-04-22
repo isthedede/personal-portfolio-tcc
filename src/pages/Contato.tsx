@@ -9,7 +9,6 @@ const Contato = () => {
       <Header />
       
       <main>
-        {/* Hero Section */}
         <div className="bg-toyama-beige py-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-dancing text-toyama-orange mb-6">
@@ -21,7 +20,6 @@ const Contato = () => {
           </div>
         </div>
         
-        {/* Contact Info Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -205,7 +203,6 @@ const Contato = () => {
           </div>
         </section>
         
-        {/* Map Section */}
         <section className="py-12 bg-toyama-beige">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-dancing text-toyama-orange mb-8">

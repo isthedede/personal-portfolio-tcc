@@ -112,7 +112,6 @@ const Produtos = () => {
       <Header />
       
       <main>
-        {/* Hero Section */}
         <div className="bg-toyama-beige py-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-dancing text-toyama-orange mb-6">
@@ -124,7 +123,6 @@ const Produtos = () => {
           </div>
         </div>
         
-        {/* Products Section */}
         <div className="py-16">
           <div className="container mx-auto px-4">
             {produtos.map((categoria) => (
@@ -164,7 +162,6 @@ const Produtos = () => {
           </div>
         </div>
         
-        {/* CTA Section */}
         <section className="py-12 bg-toyama-beige-dark">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-dancing text-toyama-orange mb-6">

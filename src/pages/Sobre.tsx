@@ -20,7 +20,6 @@ const Sobre = () => {
       <Header />
       
       <main>
-        {/* Hero Section */}
         <div className="bg-toyama-beige py-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-dancing text-toyama-orange mb-6">
@@ -32,7 +31,6 @@ const Sobre = () => {
           </div>
         </div>
         
-        {/* Story Section */}
         <section id="nossa-historia" className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -62,7 +60,6 @@ const Sobre = () => {
           </div>
         </section>
         
-        {/* Values Section */}
         <section className="py-16 bg-toyama-beige">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-dancing text-toyama-orange text-center mb-12">
@@ -109,7 +106,6 @@ const Sobre = () => {
           </div>
         </section>
         
-        {/* CTA Section */}
         <section className="py-16 bg-toyama-orange text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-dancing mb-6">

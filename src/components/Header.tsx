@@ -19,7 +19,6 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="text-toyama-brown hover:text-toyama-orange transition-colors">Início</Link>
           <Link to="/produtos" className="text-toyama-brown hover:text-toyama-orange transition-colors">Produtos</Link>
@@ -27,7 +26,6 @@ const Header = () => {
           <Link to="/contato" className="text-toyama-brown hover:text-toyama-orange transition-colors">Contato</Link>
         </nav>
 
-        {/* Social Media - Desktop */}
         <div className="hidden md:flex items-center space-x-4">
           <a href="https://www.instagram.com/leticiatoyama/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <Instagram className="w-5 h-5 text-toyama-orange hover:text-toyama-orange-light transition-colors" />
