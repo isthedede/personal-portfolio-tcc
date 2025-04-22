@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
+# Portfolio Leticia
 
-## Project info
+![Portfolio Leticia](public/placeholder.svg)
 
-**URL**: https://lovable.dev/projects/845872e9-cd1a-4e00-8cd4-e107513c3279
+Um portfólio moderno e responsivo desenvolvido com React, TypeScript e Tailwind CSS.
 
-## How can I edit this code?
+## 🚀 Tecnologias
 
-There are several ways of editing your application.
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-**Use Lovable**
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [React Router DOM](https://reactrouter.com/)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/845872e9-cd1a-4e00-8cd4-e107513c3279) and start prompting.
+## 📋 Pré-requisitos
 
-Changes made via Lovable will be committed automatically to this repo.
+Antes de começar, você precisa ter instalado em sua máquina:
 
-**Use your preferred IDE**
+- [Node.js](https://nodejs.org/) (versão 18 ou superior)
+- [npm](https://www.npmjs.com/) (geralmente vem com o Node.js)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🔧 Instalação
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone o repositório
+```bash
+git clone https://github.com/isthedede/Portfolio-Leticia.git
+```
 
-Follow these steps:
+2. Acesse a pasta do projeto
+```bash
+cd Portfolio-Leticia
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. Instale as dependências
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Execute o projeto
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+5. Acesse o projeto em seu navegador
+```
+http://localhost:8080
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🛠️ Scripts Disponíveis
 
-**Use GitHub Codespaces**
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Cria a versão de produção
+- `npm run preview` - Visualiza a versão de produção localmente
+- `npm run lint` - Executa a verificação de código
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📦 Estrutura do Projeto
 
-## What technologies are used for this project?
+```
+src/
+  ├── components/     # Componentes reutilizáveis
+  ├── pages/         # Páginas da aplicação
+  ├── hooks/         # Hooks personalizados
+  ├── lib/           # Utilitários e configurações
+  └── styles/        # Arquivos de estilo
+```
 
-This project is built with:
+## 🤝 Contribuindo
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
-## How can I deploy this project?
+## 📝 Licença
 
-Simply open [Lovable](https://lovable.dev/projects/845872e9-cd1a-4e00-8cd4-e107513c3279) and click on Share -> Publish.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## Can I connect a custom domain to my Lovable project?
+## 👥 Autores
 
-Yes, you can!
+* **Leticia** - *Trabalho Inicial* - [isthedede](https://github.com/isthedede)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📫 Contato
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Leticia - [@seu_twitter](https://twitter.com/seu_twitter) - email@exemplo.com
+
+Link do Projeto: [https://github.com/isthedede/Portfolio-Leticia](https://github.com/isthedede/Portfolio-Leticia)
+
