@@ -1,6 +1,6 @@
 # Portfolio Leticia
 
-![Portfolio Leticia](public/placeholder.svg)
+![Portfolio Leticia](logo_leticia.jpg)
 
 Um portfólio moderno e responsivo desenvolvido com React, TypeScript e Tailwind CSS.
 
