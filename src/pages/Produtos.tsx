@@ -13,7 +13,7 @@ const produtos = [
         id: "caixa1",
         name: "Caixa de Presente Elegante",
         description: "Caixa decorada com laço personalizado, ideal para presentes especiais.",
-        image: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        image: "sacos_caixas.png"
       },
       {
         id: "caixa2",
@@ -38,7 +38,7 @@ const produtos = [
         id: "cesta1",
         name: "Cesta de Café da Manhã",
         description: "Completa com delícias selecionadas para um café da manhã especial.",
-        image: "https://images.unsplash.com/photo-1577234286642-fc512a5f8f11?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        image: "cesta.png"
       },
       {
         id: "cesta2",
@@ -63,7 +63,7 @@ const produtos = [
         id: "flor1",
         name: "Buquê de Rosas",
         description: "Arranjo clássico e elegante para qualquer ocasião.",
-        image: "https://images.unsplash.com/photo-1508369311883-9a21a9261f9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        image: "flores.png"
       },
       {
         id: "flor2",

@@ -20,11 +20,11 @@ const ProductCategory = ({
   return (
     <div className={`flex flex-col ${alignRight ? 'md:flex-row-reverse' : 'md:flex-row'} gap-6 md:gap-12 items-center`}>
       <div className="w-full md:w-1/2">
-        <div className="rounded-lg overflow-hidden shadow-md h-64 md:h-96">
+        <div className="rounded-lg overflow-hidden shadow-md h-80 md:h-[32rem]">
           <img 
             src={imageSrc} 
             alt={title} 
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
           />
         </div>
       </div>

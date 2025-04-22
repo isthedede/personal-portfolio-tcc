@@ -1,5 +1,6 @@
 
 import { Instagram, Facebook, Phone, Mail, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -17,12 +18,7 @@ const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a href="https://api.whatsapp.com/send?phone=%205516997177111&text=Ol%C3%A1%2C+tudo+bem%3F" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-toyama-orange transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
-                  <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
-                  <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
-                  <path d="M9.5 13.5c.5 1 1.5 1 2.5 1s2-.5 2.5-1" />
-                </svg>
+                <FaWhatsapp size={20} />
               </a>
             </div>
           </div>
@@ -52,13 +48,13 @@ const Footer = () => {
                 <a href="/" className="hover:text-toyama-orange transition-colors">Início</a>
               </li>
               <li>
-                <a href="/produtos" className="hover:text-toyama-orange transition-colors">Nossos Produtos</a>
+                <a href="/produtos" className="hover:text-toyama-orange transition-colors">Meus Produtos</a>
               </li>
               <li>
-                <a href="/sobre" className="hover:text-toyama-orange transition-colors">Sobre Nós</a>
+                <a href="/sobre" className="hover:text-toyama-orange transition-colors">Sobre Mim</a>
               </li>
               <li>
-                <a href="/contato" className="hover:text-toyama-orange transition-colors">Fale Conosco</a>
+                <a href="/contato" className="hover:text-toyama-orange transition-colors">Fale Comigo</a>
               </li>
             </ul>
           </div>
