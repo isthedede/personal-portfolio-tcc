@@ -25,14 +25,14 @@ const Index = () => {
               <ProductCategory 
                 title="Caixas e Laços Personalizados" 
                 description="Caixas artesanais decoradas com laços exclusivos para presentes especiais, datas comemorativas ou apenas para demonstrar carinho. Cada peça é única e personalizada de acordo com sua preferência."
-                imageSrc="sacos_caixas.png"
+                imageSrc="/assets/sacos_caixas.png"
                 link="/produtos/caixas"
               />
               
               <ProductCategory 
                 title="Cestas para Diversas Ocasiões" 
                 description="Cestas preparadas com todo cuidado para aniversários, datas comemorativas, nascimentos, casamentos e muito mais. Você escolhe o tema e nós criamos uma cesta única e especial."
-                imageSrc="cesta.png"
+                imageSrc="/assets/cesta.png"
                 link="/produtos/cestas"
                 alignRight={true}
               />
@@ -40,7 +40,7 @@ const Index = () => {
               <ProductCategory 
                 title="Floricultura" 
                 description="Arranjos florais para todas as ocasiões: buquês, centros de mesa, decorações para eventos e muito mais. Trabalhamos com flores frescas selecionadas para garantir qualidade e beleza."
-                imageSrc="flores.png"
+                imageSrc="/assets/flores.png"
                 link="/produtos/flores"
               />
               

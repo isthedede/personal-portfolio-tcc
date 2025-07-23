@@ -17,7 +17,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <img src="/lovable-uploads/738a05b4-b5c5-4643-b0e3-2a7bccc59493.png" alt="Letícia Toyama Logo" className="h-14" />
+            <img src="/assets/logo_leticia.jpg" alt="Letícia Toyama Logo" className="h-14" />
           </Link>
         </div>
 
