@@ -1,4 +1,9 @@
 
+import { useRef } from "react";
+import { useGSAP } from "@/hooks/useGSAP";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const testimonials = [
   {
     id: 1,
@@ -21,14 +26,55 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!sectionRef.current || !titleRef.current || !cardsRef.current) return;
+
+      // Animação do título
+      gsap.from(titleRef.current, {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "top 60%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Animação dos cards (stagger + scale)
+      gsap.from(cardsRef.current.children, {
+        y: 50,
+        opacity: 0,
+        scale: 0.9,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "top 60%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    },
+    { scope: sectionRef }
+  );
+
   return (
-    <section className="py-12 bg-toyama-beige">
+    <section ref={sectionRef} className="py-12 bg-toyama-beige">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-dancing text-toyama-orange text-center mb-12">
+        <h2 ref={titleRef} className="text-3xl md:text-4xl font-dancing text-toyama-orange text-center mb-12">
           O que nossos clientes dizem
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
             <div 
               key={testimonial.id} 

@@ -1,13 +1,57 @@
 
-import React from 'react';
+import { useRef } from 'react';
 import { Link } from "react-router-dom";
+import { useGSAP } from "@/hooks/useGSAP";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const AboutPreview = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!sectionRef.current || !textRef.current || !imageRef.current) return;
+
+      // Animação do texto (slide da esquerda)
+      gsap.from(textRef.current.children, {
+        x: -100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          end: "top 50%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Animação da imagem (slide da direita + scale)
+      gsap.from(imageRef.current, {
+        x: 100,
+        opacity: 0,
+        scale: 0.9,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          end: "top 50%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    },
+    { scope: sectionRef }
+  );
+
   return (
-    <section className="py-16 bg-toyama-beige-dark">
+    <section ref={sectionRef} className="py-16 bg-toyama-beige-dark">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="w-full md:w-1/2 md:pr-12">
+          <div ref={textRef} className="w-full md:w-1/2 md:pr-12">
             <h2 className="text-3xl md:text-4xl font-dancing text-toyama-orange mb-6">
               Sobre Letícia Toyama
             </h2>
@@ -25,7 +69,7 @@ const AboutPreview = () => {
             </Link>
           </div>
           
-          <div className="w-full md:w-1/2">
+          <div ref={imageRef} className="w-full md:w-1/2">
             <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1556760544-74068565f05c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
