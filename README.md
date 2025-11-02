@@ -1,6 +1,6 @@
-# Portfolio Leticia
+# Portfolio
 
-![Portfolio Leticia](logo_leticia.jpg)
+![Portfolio](logo_leticia.jpg)
 
 Um portfólio moderno e responsivo desenvolvido com React, TypeScript e Tailwind CSS.
 
@@ -71,8 +71,4 @@ src/
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👥 Autores
-
-* André Luiz Toyama Zanello
-* Lucas Carita Pereira
 
