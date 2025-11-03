@@ -32,7 +32,7 @@ const Index = () => {
               <ProductCategory 
                 title="Cestas para Diversas Ocasiões" 
                 description="Cestas preparadas com todo cuidado para aniversários, datas comemorativas, nascimentos, casamentos e muito mais. Você escolhe o tema e nós criamos uma cesta única e especial."
-                imageSrc="/assets/cesta.png"
+                imageSrc="/assets/cestas_diversas_ocasioes.jpg"
                 link="/produtos/cestas"
                 alignRight={true}
               />
@@ -40,14 +40,14 @@ const Index = () => {
               <ProductCategory 
                 title="Floricultura" 
                 description="Arranjos florais para todas as ocasiões: buquês, centros de mesa, decorações para eventos e muito mais. Trabalhamos com flores frescas selecionadas para garantir qualidade e beleza."
-                imageSrc="/assets/flores.png"
+                imageSrc="/assets/Floricultura.jpg"
                 link="/produtos/flores"
               />
               
               <ProductCategory 
-                title="Sobremesas" 
+                title="Cestas personalizadas" 
                 description="Doces e sobremesas deliciosas feitas com ingredientes selecionados e muito carinho. Perfeitas para complementar seus presentes ou para adoçar momentos especiais."
-                imageSrc="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                imageSrc="/assets/cestas_personalizadas_flores.jpg"
                 link="/produtos/sobremesas"
                 alignRight={true}
               />

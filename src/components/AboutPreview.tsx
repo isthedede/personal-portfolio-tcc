@@ -14,7 +14,6 @@ const AboutPreview = () => {
     () => {
       if (!sectionRef.current || !textRef.current || !imageRef.current) return;
 
-      // Animação do texto (slide da esquerda)
       gsap.from(textRef.current.children, {
         x: -100,
         opacity: 0,
@@ -29,7 +28,6 @@ const AboutPreview = () => {
         },
       });
 
-      // Animação da imagem (slide da direita + scale)
       gsap.from(imageRef.current, {
         x: 100,
         opacity: 0,
@@ -53,7 +51,7 @@ const AboutPreview = () => {
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div ref={textRef} className="w-full md:w-1/2 md:pr-12">
             <h2 className="text-3xl md:text-4xl font-dancing text-toyama-orange mb-6">
-              Sobre Letícia Toyama
+              Sobre Letícia
             </h2>
             <p className="text-toyama-brown mb-6">
               Com dedicação e paixão pelo artesanato, transformo materiais simples em verdadeiras obras de arte. Cada caixa, laço, arranjo floral e sobremesa é criado com atenção aos detalhes e pensando na felicidade de quem irá receber.
@@ -72,8 +70,8 @@ const AboutPreview = () => {
           <div ref={imageRef} className="w-full md:w-1/2">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1556760544-74068565f05c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                alt="Artesanato" 
+                src="/assets/sobre_leticia.jpg" 
+                alt="Sobre" 
                 className="rounded-lg shadow-lg"
               />
             </div>

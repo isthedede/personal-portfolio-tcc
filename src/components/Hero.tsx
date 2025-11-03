@@ -13,14 +13,12 @@ const Hero = () => {
 
   useGSAP(
     () => {
-      // Animação do background (fade in suave)
       gsap.from(backgroundRef.current, {
         opacity: 0,
         duration: 1.5,
         ease: "power2.out",
       });
 
-      // Animação do título (slide up + fade in)
       gsap.from(titleRef.current, {
         y: 50,
         opacity: 0,
@@ -29,7 +27,6 @@ const Hero = () => {
         ease: "power3.out",
       });
 
-      // Animação do texto (slide up + fade in)
       gsap.from(textRef.current, {
         y: 30,
         opacity: 0,
@@ -38,7 +35,6 @@ const Hero = () => {
         ease: "power3.out",
       });
 
-      // Animação dos botões (sequencial, fade in + scale)
       gsap.from(buttonsRef.current?.children || [], {
         y: 20,
         opacity: 0,
@@ -58,7 +54,7 @@ const Hero = () => {
         ref={backgroundRef}
         className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1589365252845-092198ba5334?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')",
+          backgroundImage: "url('/assets/foto_fundo_inicio.jpg')",
           backgroundBlendMode: "multiply"
         }}
       ></div>
