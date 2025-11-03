@@ -72,6 +72,8 @@ const AboutPreview = () => {
               <img 
                 src="/assets/sobre_leticia.jpg" 
                 alt="Sobre" 
+                loading="lazy" 
+                decoding="async"
                 className="rounded-lg shadow-lg"
               />
             </div>

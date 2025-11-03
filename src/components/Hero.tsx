@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@/hooks/useGSAP";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -13,19 +14,32 @@ const Hero = () => {
 
   useGSAP(
     () => {
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
       gsap.from(backgroundRef.current, {
         opacity: 0,
         duration: 1.5,
         ease: "power2.out",
       });
 
-      gsap.from(titleRef.current, {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        delay: 0.3,
-        ease: "power3.out",
-      });
+      if (!reduceMotion) {
+        gsap.to(backgroundRef.current, {
+          yPercent: -8,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, clipPath: 'inset(0 100% 0 0)' },
+        { opacity: 1, clipPath: 'inset(0 0% 0 0)', duration: 1.1, delay: 0.2, ease: 'power3.out' }
+      );
 
       gsap.from(textRef.current, {
         y: 30,

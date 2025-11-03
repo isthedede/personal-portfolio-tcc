@@ -32,36 +32,41 @@ const ProductCategory = ({
   useGSAP(
     () => {
       if (!categoryRef.current || !imageRef.current || !contentRef.current) return;
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       const direction = alignRight ? -1 : 1;
 
-      gsap.from(imageRef.current, {
-        x: 100 * direction,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: categoryRef.current,
-          start: "top 80%",
-          end: "top 50%",
-          toggleActions: "play none none reverse",
-        },
-      });
+      if (!reduceMotion) {
+        gsap.from(imageRef.current, {
+          x: 100 * direction,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: categoryRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            toggleActions: "play none none reverse",
+            once: true,
+          },
+        });
 
-      gsap.from(contentRef.current.children, {
-        x: -100 * direction,
-        opacity: 0,
-        duration: 1,
-        delay: 0.2,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: categoryRef.current,
-          start: "top 80%",
-          end: "top 50%",
-          toggleActions: "play none none reverse",
-        },
-      });
+        gsap.from(contentRef.current.children, {
+          x: -100 * direction,
+          opacity: 0,
+          duration: 1,
+          delay: 0.2,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: categoryRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            toggleActions: "play none none reverse",
+            once: true,
+          },
+        });
+      }
     },
     { scope: categoryRef, dependencies: [alignRight] }
   );
@@ -72,10 +77,23 @@ const ProductCategory = ({
       className={`flex flex-col ${alignRight ? 'md:flex-row-reverse' : 'md:flex-row'} gap-6 md:gap-12 items-center`}
     >
       <div ref={imageRef} className="w-full md:w-1/2">
-        <div className={`rounded-lg overflow-hidden shadow-md ${fixedHeight ? 'h-80 md:h-[32rem]' : ''}`}> 
+        <div
+          className={`rounded-lg overflow-hidden shadow-md ${fixedHeight ? 'h-80 md:h-[32rem]' : ''}`}
+          onMouseMove={(e) => {
+            const el = e.currentTarget as HTMLDivElement;
+            const rect = el.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5..0.5
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            gsap.to(el, { rotateY: x * 6, rotateX: -y * 6, transformPerspective: 800, transformOrigin: 'center', duration: 0.3 });
+          }}
+          onMouseLeave={(e) => gsap.to(e.currentTarget, { rotateX: 0, rotateY: 0, duration: 0.4 })}
+        > 
           <img 
             src={imageSrc} 
             alt={title} 
+            loading="lazy"
+            decoding="async"
+            sizes="(min-width: 768px) 50vw, 100vw"
             className={`w-full ${fixedHeight ? 'h-full' : 'h-auto'} ${imageFit === "cover" ? "object-cover" : "object-contain"} transition-transform duration-500 hover:scale-105`}
           />
         </div>

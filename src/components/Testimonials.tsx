@@ -29,6 +29,7 @@ const Testimonials = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const autoplayRef = useRef<gsap.core.Animation | null>(null);
 
   useGSAP(
     () => {
@@ -47,7 +48,8 @@ const Testimonials = () => {
         },
       });
 
-      gsap.from(cardsRef.current.children, {
+      const cards = cardsRef.current.children;
+      gsap.from(cards, {
         y: 50,
         opacity: 0,
         scale: 0.9,
@@ -61,6 +63,28 @@ const Testimonials = () => {
           toggleActions: "play none none reverse",
         },
       });
+
+      // Autoplay sutil: destaca um card por vez (scale/boxShadow), pausa no hover
+      const highlight = () => {
+        const tl = gsap.timeline({ repeat: -1, repeatDelay: 1.5 });
+        Array.from(cards).forEach((el) => {
+          tl.to(el, { boxShadow: '0 10px 25px rgba(0,0,0,0.12)', scale: 1.02, duration: 0.6, ease: 'power2.out' })
+            .to(el, { boxShadow: '0 4px 12px rgba(0,0,0,0.08)', scale: 1.0, duration: 0.6, ease: 'power2.in' }, ">0.9");
+        });
+        return tl;
+      };
+      autoplayRef.current = highlight();
+
+      const section = sectionRef.current;
+      const onEnter = () => autoplayRef.current?.play();
+      const onLeave = () => autoplayRef.current?.pause();
+      section.addEventListener('mouseenter', onLeave);
+      section.addEventListener('mouseleave', onEnter);
+      return () => {
+        section.removeEventListener('mouseenter', onLeave);
+        section.removeEventListener('mouseleave', onEnter);
+        autoplayRef.current?.kill();
+      };
     },
     { scope: sectionRef }
   );

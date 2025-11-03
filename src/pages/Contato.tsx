@@ -4,6 +4,13 @@ import Footer from "@/components/Footer";
 import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
 
 const Contato = () => {
+  // SEO básico
+  document.title = "Contato | Portfólio";
+  const desc = "Fale conosco para orçamentos e pedidos personalizados.";
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', desc); else {
+    const m = document.createElement('meta'); m.name = 'description'; m.content = desc; document.head.appendChild(m);
+  }
   return (
     <div className="min-h-screen bg-white">
       <Header />

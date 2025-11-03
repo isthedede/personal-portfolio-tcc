@@ -8,6 +8,13 @@ import CTASection from "@/components/CTASection";
 import AboutPreview from "@/components/AboutPreview";
 
 const Index = () => {
+  // SEO básico
+  document.title = "Início | Portfólio";
+  const desc = "Portfólio com caixas personalizadas, cestas, flores e soluções criativas.";
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', desc); else {
+    const m = document.createElement('meta'); m.name = 'description'; m.content = desc; document.head.appendChild(m);
+  }
   return (
     <div className="min-h-screen bg-white">
       <Header />
