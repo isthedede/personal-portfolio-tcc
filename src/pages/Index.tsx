@@ -27,6 +27,7 @@ const Index = () => {
                 description="Caixas artesanais decoradas com laços exclusivos para presentes especiais, datas comemorativas ou apenas para demonstrar carinho. Cada peça é única e personalizada de acordo com sua preferência."
                 imageSrc="/assets/sacos_caixas.png"
                 link="/produtos/caixas"
+                fixedHeight={false}
               />
               
               <ProductCategory 
@@ -35,6 +36,7 @@ const Index = () => {
                 imageSrc="/assets/cestas_diversas_ocasioes.jpg"
                 link="/produtos/cestas"
                 alignRight={true}
+                fixedHeight={false}
               />
               
               <ProductCategory 
@@ -42,6 +44,7 @@ const Index = () => {
                 description="Arranjos florais para todas as ocasiões: buquês, centros de mesa, decorações para eventos e muito mais. Trabalhamos com flores frescas selecionadas para garantir qualidade e beleza."
                 imageSrc="/assets/Floricultura.jpg"
                 link="/produtos/flores"
+                fixedHeight={false}
               />
               
               <ProductCategory 
@@ -50,6 +53,7 @@ const Index = () => {
                 imageSrc="/assets/cestas_personalizadas_flores.jpg"
                 link="/produtos/sobremesas"
                 alignRight={true}
+                fixedHeight={false}
               />
             </div>
           </div>

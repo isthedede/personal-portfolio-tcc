@@ -34,11 +34,11 @@ const Sobre = () => {
         <section id="nossa-historia" className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
+              <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
                   src="/assets/sobre_leticia.jpg" 
                   alt="Letícia - Artesanato" 
-                  className="rounded-lg shadow-lg"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
               
