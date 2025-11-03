@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 const NotFound = () => {
+  document.title = "Página não encontrada | Portfólio";
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

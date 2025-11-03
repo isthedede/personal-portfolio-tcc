@@ -54,7 +54,7 @@ const AboutPreview = () => {
               Sobre Letícia
             </h2>
             <p className="text-toyama-brown mb-6">
-              Com dedicação e paixão pelo artesanato, transformo materiais simples em verdadeiras obras de arte. Cada caixa, laço, arranjo floral e sobremesa é criado com atenção aos detalhes e pensando na felicidade de quem irá receber.
+              Com dedicação e paixão pelo artesanato, transformo materiais simples em verdadeiras obras de arte. Cada caixa, laço, arranjo floral e solução criativa é criada com atenção aos detalhes e pensando na felicidade de quem irá receber.
             </p>
             <p className="text-toyama-brown mb-6">
               Meu objetivo é fazer parte dos seus momentos especiais, criando lembranças únicas através do meu trabalho artesanal.
@@ -72,6 +72,8 @@ const AboutPreview = () => {
               <img 
                 src="/assets/sobre_leticia.jpg" 
                 alt="Sobre" 
+                loading="lazy" 
+                decoding="async"
                 className="rounded-lg shadow-lg"
               />
             </div>

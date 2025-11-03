@@ -2,14 +2,67 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { useRef } from "react";
+import { useGSAP } from "@/hooks/useGSAP";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Contato = () => {
+  // SEO básico
+  document.title = "Contato | Portfólio";
+  const desc = "Fale conosco para orçamentos e pedidos personalizados.";
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', desc); else {
+    const m = document.createElement('meta'); m.name = 'description'; m.content = desc; document.head.appendChild(m);
+  }
+  const topRef = useRef<HTMLDivElement>(null);
+  const infoRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && topRef.current) {
+      gsap.from(topRef.current.children, {
+        y: 24,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: topRef.current, start: 'top 80%' }
+      });
+    }
+    if (!reduce && infoRef.current) {
+      const blocks = infoRef.current.querySelectorAll('div[class*=flex], .w-10');
+      gsap.from(blocks, {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: infoRef.current, start: 'top 85%' }
+      });
+    }
+    if (!reduce && formRef.current) {
+      gsap.from(formRef.current.children, {
+        y: 18,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: formRef.current, start: 'top 85%' }
+      });
+    }
+    if (!reduce && mapRef.current) {
+      gsap.from(mapRef.current, { opacity: 0, y: 20, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: mapRef.current, start: 'top 90%' } });
+    }
+  }, { scope: topRef });
   return (
     <div className="min-h-screen bg-white">
       <Header />
       
       <main>
-        <div className="bg-toyama-beige py-20">
+        <div className="bg-toyama-beige py-20" ref={topRef}>
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-dancing text-toyama-orange mb-6">
               Entre em Contato
@@ -23,7 +76,7 @@ const Contato = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
+              <div ref={infoRef}>
                 <h2 className="text-3xl font-dancing text-toyama-orange mb-8">
                   Fale Conosco
                 </h2>
@@ -125,70 +178,68 @@ const Contato = () => {
                   Envie uma Mensagem
                 </h2>
                 
-                <form className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-toyama-brown mb-2">
-                      Nome
-                    </label>
+                <form className="space-y-6" ref={formRef}>
+                  <div className="relative">
                     <input 
                       type="text" 
                       id="name" 
-                      className="w-full px-4 py-2 border border-toyama-beige-dark rounded-md focus:outline-none focus:ring-2 focus:ring-toyama-orange" 
-                      placeholder="Seu nome"
+                      className="peer w-full px-4 py-3 border border-toyama-beige-dark rounded-md focus:outline-none focus:ring-2 focus:ring-toyama-orange placeholder-transparent" 
+                      placeholder="Nome"
                     />
+                    <label htmlFor="name" className="pointer-events-none absolute left-3 top-3 text-toyama-brown/80 transition-all duration-200 bg-white px-1
+                      peer-placeholder-shown:top-3 peer-placeholder-shown:text-base
+                      peer-focus:-top-2 peer-focus:text-xs peer-focus:text-toyama-orange">Nome</label>
                   </div>
                   
-                  <div>
-                    <label htmlFor="email" className="block text-toyama-brown mb-2">
-                      E-mail
-                    </label>
+                  <div className="relative">
                     <input 
                       type="email" 
                       id="email" 
-                      className="w-full px-4 py-2 border border-toyama-beige-dark rounded-md focus:outline-none focus:ring-2 focus:ring-toyama-orange" 
-                      placeholder="seu.email@exemplo.com"
+                      className="peer w-full px-4 py-3 border border-toyama-beige-dark rounded-md focus:outline-none focus:ring-2 focus:ring-toyama-orange placeholder-transparent" 
+                      placeholder="E-mail"
                     />
+                    <label htmlFor="email" className="pointer-events-none absolute left-3 top-3 text-toyama-brown/80 transition-all duration-200 bg-white px-1
+                      peer-placeholder-shown:top-3 peer-placeholder-shown:text-base
+                      peer-focus:-top-2 peer-focus:text-xs peer-focus:text-toyama-orange">E-mail</label>
                   </div>
                   
-                  <div>
-                    <label htmlFor="phone" className="block text-toyama-brown mb-2">
-                      Telefone
-                    </label>
+                  <div className="relative">
                     <input 
                       type="tel" 
                       id="phone" 
-                      className="w-full px-4 py-2 border border-toyama-beige-dark rounded-md focus:outline-none focus:ring-2 focus:ring-toyama-orange" 
-                      placeholder="(00) 00000-0000"
+                      className="peer w-full px-4 py-3 border border-toyama-beige-dark rounded-md focus:outline-none focus:ring-2 focus:ring-toyama-orange placeholder-transparent" 
+                      placeholder="Telefone"
                     />
+                    <label htmlFor="phone" className="pointer-events-none absolute left-3 top-3 text-toyama-brown/80 transition-all duration-200 bg-white px-1
+                      peer-placeholder-shown:top-3 peer-placeholder-shown:text-base
+                      peer-focus:-top-2 peer-focus:text-xs peer-focus:text-toyama-orange">Telefone</label>
                   </div>
                   
-                  <div>
-                    <label htmlFor="subject" className="block text-toyama-brown mb-2">
-                      Assunto
-                    </label>
+                  <div className="relative">
                     <select 
                       id="subject" 
-                      className="w-full px-4 py-2 border border-toyama-beige-dark rounded-md focus:outline-none focus:ring-2 focus:ring-toyama-orange"
+                      className="peer w-full px-4 py-3 border border-toyama-beige-dark rounded-md focus:outline-none focus:ring-2 focus:ring-toyama-orange bg-white"
+                      defaultValue=""
                     >
-                      <option value="">Selecione uma opção</option>
+                      <option value="" disabled>Selecione uma opção</option>
                       <option value="caixas">Caixas e Laços</option>
                       <option value="cestas">Cestas</option>
                       <option value="flores">Floricultura</option>
-                      <option value="sobremesas">Sobremesas</option>
                       <option value="outro">Outro Assunto</option>
                     </select>
+                    <label htmlFor="subject" className="absolute left-3 -top-2 text-xs text-toyama-orange bg-white px-1">Assunto</label>
                   </div>
                   
-                  <div>
-                    <label htmlFor="message" className="block text-toyama-brown mb-2">
-                      Mensagem
-                    </label>
+                  <div className="relative">
                     <textarea 
                       id="message" 
                       rows={5} 
-                      className="w-full px-4 py-2 border border-toyama-beige-dark rounded-md focus:outline-none focus:ring-2 focus:ring-toyama-orange" 
-                      placeholder="Descreva o que você deseja..."
+                      className="peer w-full px-4 py-3 border border-toyama-beige-dark rounded-md focus:outline-none focus:ring-2 focus:ring-toyama-orange placeholder-transparent" 
+                      placeholder="Mensagem"
                     ></textarea>
+                    <label htmlFor="message" className="pointer-events-none absolute left-3 top-3 text-toyama-brown/80 transition-all duration-200 bg-white px-1
+                      peer-placeholder-shown:top-3 peer-placeholder-shown:text-base
+                      peer-focus:-top-2 peer-focus:text-xs peer-focus:text-toyama-orange">Mensagem</label>
                   </div>
                   
                   <button 
@@ -204,7 +255,7 @@ const Contato = () => {
         </section>
         
         <section className="py-12 bg-toyama-beige">
-          <div className="container mx-auto px-4 text-center">
+          <div className="container mx-auto px-4 text-center" ref={mapRef}>
             <h2 className="text-3xl font-dancing text-toyama-orange mb-8">
               Nossa Localização
             </h2>

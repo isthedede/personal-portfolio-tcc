@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link, useLocation } from "react-router-dom";
+import { useGSAP } from "@/hooks/useGSAP";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Sobre = () => {
   const location = useLocation();
@@ -15,12 +18,97 @@ const Sobre = () => {
     }
   }, [location]);
 
+  // SEO básico
+  document.title = "Sobre | Portfólio";
+  const desc = "Conheça a história e valores por trás das criações artesanais.";
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', desc); else {
+    const m = document.createElement('meta'); m.name = 'description'; m.content = desc; document.head.appendChild(m);
+  }
+
+  // Refs para animações
+  const topRef = useRef<HTMLDivElement>(null);
+  const historyRef = useRef<HTMLDivElement>(null);
+  const valuesRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduce && topRef.current) {
+      gsap.from(topRef.current.children, {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: topRef.current,
+          start: 'top 80%'
+        }
+      });
+    }
+
+    if (!reduce && historyRef.current) {
+      const kids = historyRef.current.querySelectorAll('img, h2, p');
+      gsap.from(kids, {
+        y: 40,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.12,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: historyRef.current,
+          start: 'top 80%'
+        }
+      });
+      const mask = historyRef.current.querySelector('.mask-reveal');
+      if (mask) {
+        gsap.from(mask, {
+          clipPath: 'inset(0 0 100% 0)',
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: mask, start: 'top 85%' }
+        });
+      }
+    }
+
+    if (!reduce && valuesRef.current) {
+      const cards = valuesRef.current.querySelectorAll('.value-card');
+      gsap.from(cards, {
+        y: 30,
+        opacity: 0,
+        scale: 0.96,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: valuesRef.current,
+          start: 'top 85%'
+        }
+      });
+    }
+
+    if (!reduce && ctaRef.current) {
+      gsap.from(ctaRef.current, {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: ctaRef.current,
+          start: 'top 90%'
+        }
+      });
+    }
+  }, { scope: topRef });
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
       
       <main>
-        <div className="bg-toyama-beige py-20">
+        <div className="bg-toyama-beige py-20" ref={topRef}>
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-dancing text-toyama-orange mb-6">
               Sobre Nós
@@ -31,14 +119,14 @@ const Sobre = () => {
           </div>
         </div>
         
-        <section id="nossa-historia" className="py-16">
+        <section id="nossa-historia" className="py-16" ref={historyRef}>
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
+              <div className="rounded-lg overflow-hidden shadow-lg mask-reveal">
                 <img 
                   src="/assets/sobre_leticia.jpg" 
                   alt="Letícia - Artesanato" 
-                  className="rounded-lg shadow-lg"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
               
@@ -60,14 +148,14 @@ const Sobre = () => {
           </div>
         </section>
         
-        <section className="py-16 bg-toyama-beige">
+        <section className="py-16 bg-toyama-beige" ref={valuesRef}>
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-dancing text-toyama-orange text-center mb-12">
               Nossos Valores
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-lg shadow-md text-center">
+              <div className="bg-white p-8 rounded-lg shadow-md text-center value-card">
                 <div className="w-16 h-16 bg-toyama-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e25822" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21 12 17.77 5.82 21 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -79,7 +167,7 @@ const Sobre = () => {
                 </p>
               </div>
               
-              <div className="bg-white p-8 rounded-lg shadow-md text-center">
+              <div className="bg-white p-8 rounded-lg shadow-md text-center value-card">
                 <div className="w-16 h-16 bg-toyama-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e25822" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
@@ -91,7 +179,7 @@ const Sobre = () => {
                 </p>
               </div>
               
-              <div className="bg-white p-8 rounded-lg shadow-md text-center">
+              <div className="bg-white p-8 rounded-lg shadow-md text-center value-card">
                 <div className="w-16 h-16 bg-toyama-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e25822" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -106,7 +194,7 @@ const Sobre = () => {
           </div>
         </section>
         
-        <section className="py-16 bg-toyama-orange text-white">
+        <section className="py-16 bg-toyama-orange text-white" ref={ctaRef}>
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-dancing mb-6">
               Vamos criar algo especial juntos?

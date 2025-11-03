@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@/hooks/useGSAP";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -13,19 +14,32 @@ const Hero = () => {
 
   useGSAP(
     () => {
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
       gsap.from(backgroundRef.current, {
         opacity: 0,
         duration: 1.5,
         ease: "power2.out",
       });
 
-      gsap.from(titleRef.current, {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        delay: 0.3,
-        ease: "power3.out",
-      });
+      if (!reduceMotion) {
+        gsap.to(backgroundRef.current, {
+          yPercent: -8,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, clipPath: 'inset(0 100% 0 0)' },
+        { opacity: 1, clipPath: 'inset(0 0% 0 0)', duration: 1.1, delay: 0.2, ease: 'power3.out' }
+      );
 
       gsap.from(textRef.current, {
         y: 30,
@@ -58,6 +72,7 @@ const Hero = () => {
           backgroundBlendMode: "multiply"
         }}
       ></div>
+      <div className="absolute inset-0 z-0 bg-black/10"></div>
       
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl">
@@ -65,19 +80,19 @@ const Hero = () => {
             Transformando momentos em memórias especiais
           </h1>
           <p ref={textRef} className="text-toyama-brown text-xl mb-8 max-w-2xl">
-            Caixas personalizadas, cestas para presentes, flores e sobremesas feitas com carinho para tornar cada ocasião única.
+            Caixas personalizadas, cestas para presentes, flores e soluções criativas feitas com carinho para tornar cada ocasião única.
           </p>
           <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4">
             <Link 
               to="/produtos" 
-              className="bg-toyama-orange text-white px-6 py-3 rounded-md inline-flex items-center hover:bg-toyama-orange-light transition-colors"
+              className="bg-toyama-orange text-white px-6 h-11 rounded-lg inline-flex items-center justify-center hover:bg-toyama-orange-light transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
             >
               Ver Produtos
               <ArrowRight size={18} className="ml-2" />
             </Link>
             <Link 
               to="/contato" 
-              className="border border-toyama-orange text-toyama-orange px-6 py-3 rounded-md inline-flex items-center hover:bg-toyama-orange hover:text-white transition-colors"
+              className="border border-toyama-orange text-toyama-orange px-6 h-11 rounded-lg inline-flex items-center justify-center hover:bg-toyama-orange hover:text-white transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-toyama-orange"
             >
               Entre em Contato
             </Link>

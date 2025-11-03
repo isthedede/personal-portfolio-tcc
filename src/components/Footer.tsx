@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-toyama-orange text-xl font-dancing mb-4">Letícia</h3>
-            <p className="mb-4">Artesanato, floricultura e sobremesas personalizadas para tornar seus momentos especiais ainda mais marcantes.</p>
+            <p className="mb-4">Artesanato, floricultura e soluções criativas para tornar seus momentos especiais ainda mais marcantes.</p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/leticiatoyama/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-toyama-orange transition-colors">
                 <Instagram size={20} />

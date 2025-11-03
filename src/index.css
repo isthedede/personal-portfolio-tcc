@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Acessibilidade: foco visível global e consistente */
+:focus-visible {
+  outline: 2px solid #e25822; /* laranja do tema */
+  outline-offset: 3px;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

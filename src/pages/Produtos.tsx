@@ -1,7 +1,12 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FAQSection from "@/components/FAQSection";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { useGSAP } from "@/hooks/useGSAP";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const produtos = [
   {
@@ -107,6 +112,43 @@ const produtos = [
 ];
 
 const Produtos = () => {
+  document.title = "Produtos | Portfólio";
+  const desc = "Explore caixas personalizadas, cestas, floricultura e soluções criativas.";
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', desc); else {
+    const m = document.createElement('meta'); m.name = 'description'; m.content = desc; document.head.appendChild(m);
+  }
+  const listRef = useRef<HTMLDivElement>(null);
+  useGSAP(() => {
+    if (!listRef.current) return;
+    const sections = listRef.current.querySelectorAll('section');
+    gsap.from(sections, {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: listRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      }
+    });
+
+    // Image reveal (mask) per card
+    const masks = listRef.current.querySelectorAll('.img-reveal');
+    gsap.from(masks, {
+      clipPath: 'inset(0 0 100% 0)',
+      duration: 1,
+      ease: 'power3.out',
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: listRef.current,
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      }
+    });
+  }, { scope: listRef });
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -123,7 +165,7 @@ const Produtos = () => {
           </div>
         </div>
         
-        <div className="py-16">
+        <div className="py-16" ref={listRef}>
           <div className="container mx-auto px-4">
             {produtos.map((categoria) => (
               <section key={categoria.id} className="mb-16 scroll-mt-24" id={categoria.category}>
@@ -135,13 +177,16 @@ const Produtos = () => {
                   {categoria.items.map((item) => (
                     <div 
                       key={item.id} 
-                      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                      className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                     >
-                      <div className="h-64 overflow-hidden">
+                      <div className="h-64 overflow-hidden img-reveal">
                         <img 
                           src={item.image} 
                           alt={item.name || "Imagem de produto"} 
-                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                          loading="lazy"
+                          decoding="async"
+                          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                          className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
                         />
                       </div>
                       <div className="p-6">
@@ -182,6 +227,8 @@ const Produtos = () => {
             </Link>
           </div>
         </section>
+
+        <FAQSection />
       </main>
       
       <Footer />

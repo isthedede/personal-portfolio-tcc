@@ -8,6 +8,13 @@ import CTASection from "@/components/CTASection";
 import AboutPreview from "@/components/AboutPreview";
 
 const Index = () => {
+  // SEO básico
+  document.title = "Início | Portfólio";
+  const desc = "Portfólio com caixas personalizadas, cestas, flores e soluções criativas.";
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', desc); else {
+    const m = document.createElement('meta'); m.name = 'description'; m.content = desc; document.head.appendChild(m);
+  }
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -27,6 +34,7 @@ const Index = () => {
                 description="Caixas artesanais decoradas com laços exclusivos para presentes especiais, datas comemorativas ou apenas para demonstrar carinho. Cada peça é única e personalizada de acordo com sua preferência."
                 imageSrc="/assets/sacos_caixas.png"
                 link="/produtos/caixas"
+                fixedHeight={false}
               />
               
               <ProductCategory 
@@ -35,6 +43,7 @@ const Index = () => {
                 imageSrc="/assets/cestas_diversas_ocasioes.jpg"
                 link="/produtos/cestas"
                 alignRight={true}
+                fixedHeight={false}
               />
               
               <ProductCategory 
@@ -42,14 +51,16 @@ const Index = () => {
                 description="Arranjos florais para todas as ocasiões: buquês, centros de mesa, decorações para eventos e muito mais. Trabalhamos com flores frescas selecionadas para garantir qualidade e beleza."
                 imageSrc="/assets/Floricultura.jpg"
                 link="/produtos/flores"
+                fixedHeight={false}
               />
               
               <ProductCategory 
                 title="Cestas personalizadas" 
-                description="Doces e sobremesas deliciosas feitas com ingredientes selecionados e muito carinho. Perfeitas para complementar seus presentes ou para adoçar momentos especiais."
+                description="Cestas personalizadas com flores e presentes temáticos, feitas com carinho para complementar seus momentos especiais."
                 imageSrc="/assets/cestas_personalizadas_flores.jpg"
-                link="/produtos/sobremesas"
+                link="/produtos/solucoes-criativas"
                 alignRight={true}
+                fixedHeight={false}
               />
             </div>
           </div>
