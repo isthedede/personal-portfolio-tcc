@@ -34,7 +34,6 @@ const Testimonials = () => {
     () => {
       if (!sectionRef.current || !titleRef.current || !cardsRef.current) return;
 
-      // Animação do título
       gsap.from(titleRef.current, {
         y: 30,
         opacity: 0,
@@ -48,7 +47,6 @@ const Testimonials = () => {
         },
       });
 
-      // Animação dos cards (stagger + scale)
       gsap.from(cardsRef.current.children, {
         y: 50,
         opacity: 0,

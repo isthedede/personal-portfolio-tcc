@@ -31,7 +31,6 @@ const ProductCategory = ({
 
       const direction = alignRight ? -1 : 1;
 
-      // Animação da imagem
       gsap.from(imageRef.current, {
         x: 100 * direction,
         opacity: 0,
@@ -45,7 +44,6 @@ const ProductCategory = ({
         },
       });
 
-      // Animação do conteúdo (título, texto, link)
       gsap.from(contentRef.current.children, {
         x: -100 * direction,
         opacity: 0,

@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-toyama-orange text-xl font-dancing mb-4">Letícia Toyama</h3>
+            <h3 className="text-toyama-orange text-xl font-dancing mb-4">Letícia</h3>
             <p className="mb-4">Artesanato, floricultura e sobremesas personalizadas para tornar seus momentos especiais ainda mais marcantes.</p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/leticiatoyama/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-toyama-orange transition-colors">
@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-toyama-brown/20 mt-8 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Letícia Toyama. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Letícia. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

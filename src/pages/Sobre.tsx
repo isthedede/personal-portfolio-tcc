@@ -26,7 +26,7 @@ const Sobre = () => {
               Sobre Nós
             </h1>
             <p className="text-toyama-brown text-xl max-w-3xl mx-auto">
-              Conheça a história e a paixão por trás das criações artesanais de Letícia Toyama.
+              Conheça a história e a paixão por trás das criações artesanais de Letícia.
             </p>
           </div>
         </div>
@@ -36,8 +36,8 @@ const Sobre = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1556760544-74068565f05c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                  alt="Letícia Toyama Artesanato" 
+                  src="/assets/sobre_leticia.jpg" 
+                  alt="Letícia - Artesanato" 
                   className="rounded-lg shadow-lg"
                 />
               </div>
@@ -47,7 +47,7 @@ const Sobre = () => {
                   Nossa História
                 </h2>
                 <p className="text-toyama-brown mb-4">
-                  A jornada de Letícia Toyama começou com sua paixão por criar peças artesanais únicas que pudessem transmitir emoções e tornar momentos ainda mais especiais. Com dedicação e muito estudo, o que começou como um hobby se transformou em um negócio cheio de personalidade.
+                  A jornada de Letícia começou com sua paixão por criar peças artesanais únicas que pudessem transmitir emoções e tornar momentos ainda mais especiais. Com dedicação e muito estudo, o que começou como um hobby se transformou em um negócio cheio de personalidade.
                 </p>
                 <p className="text-toyama-brown mb-4">
                   Atendendo inicialmente amigos e familiares, o trabalho logo ganhou reconhecimento pela qualidade e atenção aos detalhes. Cada produto é pensado e desenvolvido com muito carinho, considerando a ocasião e o significado que cada peça terá para quem a recebe.

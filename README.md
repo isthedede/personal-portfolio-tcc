@@ -26,12 +26,12 @@ Antes de começar, você precisa ter instalado em sua máquina:
 
 1. Clone o repositório
 ```bash
-git clone https://github.com/isthedede/Portfolio-Leticia.git
+git clone https://github.com/isthedede/personal-portfolio-tcc.git
 ```
 
 2. Acesse a pasta do projeto
 ```bash
-cd Portfolio-Leticia
+cd personal-portfolio-tcc
 ```
 
 3. Instale as dependências
@@ -46,7 +46,7 @@ npm run dev
 
 5. Acesse o projeto em seu navegador
 ```
-http://localhost:8080
+http://localhost:5173
 ```
 
 ## 🛠️ Scripts Disponíveis
@@ -66,6 +66,32 @@ src/
   ├── lib/           # Utilitários e configurações
   └── styles/        # Arquivos de estilo
 ```
+
+## ✨ Recursos e funcionalidades
+
+- Seções principais de portfólio: sobre, projetos, habilidades, depoimentos e contato
+- Layout totalmente responsivo (mobile-first) com Tailwind CSS
+- Componentização e tipagem com React + TypeScript
+- Design consistente com componentes do shadcn/ui
+- Navegação com React Router
+- Configuração de build ágil com Vite
+
+## ♿ Acessibilidade e SEO
+
+- Estrutura semântica de HTML para leitores de tela
+- Suporte a navegação por teclado nos componentes de UI
+- Uso de atributos ARIA quando necessário
+- Cores com bom contraste via Tailwind (classes utilitárias)
+- Metatags básicas para SEO e compartilhamento (title, description, Open Graph)
+
+## 🙏 Créditos
+
+- Framework: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- Linguagem: [TypeScript](https://www.typescriptlang.org/)
+- Estilos: [Tailwind CSS](https://tailwindcss.com/)
+- Componentes UI: [shadcn/ui](https://ui.shadcn.com/) (baseado em [Radix UI](https://www.radix-ui.com/))
+- Roteamento: [React Router DOM](https://reactrouter.com/)
+- Imagens/ativos: pertencem aos seus respectivos autores
 
 ## 📝 Licença
 

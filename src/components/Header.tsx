@@ -15,7 +15,6 @@ const Header = () => {
 
   useGSAP(
     () => {
-      // Animação do header (fade in + slide down)
       gsap.from(headerRef.current, {
         y: -100,
         opacity: 0,
@@ -23,7 +22,6 @@ const Header = () => {
         ease: "power3.out",
       });
 
-      // Animação do logo (scale + fade)
       gsap.from(logoRef.current, {
         scale: 0.8,
         opacity: 0,
@@ -32,7 +30,6 @@ const Header = () => {
         ease: "back.out(1.7)",
       });
 
-      // Animação dos links de navegação (stagger)
       if (navRef.current) {
         gsap.from(navRef.current.children, {
           y: -20,
@@ -44,7 +41,6 @@ const Header = () => {
         });
       }
 
-      // Animação dos ícones sociais
       if (socialRef.current) {
         gsap.from(socialRef.current.children, {
           scale: 0,
@@ -68,7 +64,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div ref={logoRef} className="flex items-center">
           <Link to="/" className="flex items-center">
-            <img src="/assets/logo_leticia.jpg" alt="Letícia Toyama Logo" className="h-14" />
+            <img src="/assets/logo_leticia.jpg" alt="Logo" className="h-14" />
           </Link>
         </div>
 
@@ -91,13 +87,11 @@ const Header = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button onClick={toggleMenu} className="md:hidden text-toyama-brown">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-toyama-beige border-t border-toyama-beige-dark">
           <div className="container mx-auto px-4 py-4">

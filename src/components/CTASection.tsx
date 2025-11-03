@@ -13,7 +13,6 @@ const CTASection = () => {
     () => {
       if (!sectionRef.current || !contentRef.current) return;
 
-      // Animação dos elementos (fade in + scale)
       gsap.from(contentRef.current.children, {
         y: 40,
         opacity: 0,
@@ -29,7 +28,6 @@ const CTASection = () => {
         },
       });
 
-      // Animação pulsante no botão (opcional - mais sutil)
       gsap.to(contentRef.current.querySelector("a"), {
         scale: 1.05,
         duration: 2,
