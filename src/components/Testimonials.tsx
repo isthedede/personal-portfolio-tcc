@@ -14,7 +14,7 @@ const testimonials = [
   {
     id: 2,
     name: "João Oliveira",
-    text: "As sobremesas são simplesmente deliciosas e as embalagens ficam lindas. Sempre peço para ocasiões especiais.",
+    text: "As cestas e caixas são caprichadas e as embalagens ficam lindas. Sempre peço para ocasiões especiais.",
     rating: 5,
   },
   {

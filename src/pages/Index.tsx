@@ -56,9 +56,9 @@ const Index = () => {
               
               <ProductCategory 
                 title="Cestas personalizadas" 
-                description="Doces e sobremesas deliciosas feitas com ingredientes selecionados e muito carinho. Perfeitas para complementar seus presentes ou para adoçar momentos especiais."
+                description="Cestas personalizadas com flores e presentes temáticos, feitas com carinho para complementar seus momentos especiais."
                 imageSrc="/assets/cestas_personalizadas_flores.jpg"
-                link="/produtos/sobremesas"
+                link="/produtos/solucoes-criativas"
                 alignRight={true}
                 fixedHeight={false}
               />

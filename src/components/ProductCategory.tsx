@@ -78,7 +78,7 @@ const ProductCategory = ({
     >
       <div ref={imageRef} className="w-full md:w-1/2">
         <div
-          className={`rounded-lg overflow-hidden shadow-md ${fixedHeight ? 'h-80 md:h-[32rem]' : ''}`}
+          className={`rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow ${fixedHeight ? 'h-80 md:h-[32rem]' : ''}`}
           onMouseMove={(e) => {
             const el = e.currentTarget as HTMLDivElement;
             const rect = el.getBoundingClientRect();
@@ -104,7 +104,7 @@ const ProductCategory = ({
         <p className="text-lg md:text-xl leading-relaxed text-toyama-brown mb-8">{description}</p>
         <Link 
           to={link} 
-          className="inline-flex items-center text-toyama-orange hover:text-toyama-orange-light transition-colors text-base md:text-lg"
+          className="inline-flex items-center text-toyama-orange hover:text-toyama-orange-light transition-colors text-base md:text-lg underline decoration-toyama-orange/40 underline-offset-4 hover:decoration-toyama-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-toyama-orange focus-visible:rounded"
         >
           Ver mais
           <ArrowRight size={16} className="ml-2" />

@@ -177,7 +177,7 @@ const Produtos = () => {
                   {categoria.items.map((item) => (
                     <div 
                       key={item.id} 
-                      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                      className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                     >
                       <div className="h-64 overflow-hidden img-reveal">
                         <img 

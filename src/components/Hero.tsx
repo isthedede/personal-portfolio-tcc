@@ -72,6 +72,7 @@ const Hero = () => {
           backgroundBlendMode: "multiply"
         }}
       ></div>
+      <div className="absolute inset-0 z-0 bg-black/10"></div>
       
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl">
@@ -79,19 +80,19 @@ const Hero = () => {
             Transformando momentos em memórias especiais
           </h1>
           <p ref={textRef} className="text-toyama-brown text-xl mb-8 max-w-2xl">
-            Caixas personalizadas, cestas para presentes, flores e sobremesas feitas com carinho para tornar cada ocasião única.
+            Caixas personalizadas, cestas para presentes, flores e soluções criativas feitas com carinho para tornar cada ocasião única.
           </p>
           <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4">
             <Link 
               to="/produtos" 
-              className="bg-toyama-orange text-white px-6 py-3 rounded-md inline-flex items-center hover:bg-toyama-orange-light transition-colors"
+              className="bg-toyama-orange text-white px-6 h-11 rounded-lg inline-flex items-center justify-center hover:bg-toyama-orange-light transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
             >
               Ver Produtos
               <ArrowRight size={18} className="ml-2" />
             </Link>
             <Link 
               to="/contato" 
-              className="border border-toyama-orange text-toyama-orange px-6 py-3 rounded-md inline-flex items-center hover:bg-toyama-orange hover:text-white transition-colors"
+              className="border border-toyama-orange text-toyama-orange px-6 h-11 rounded-lg inline-flex items-center justify-center hover:bg-toyama-orange hover:text-white transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-toyama-orange"
             >
               Entre em Contato
             </Link>

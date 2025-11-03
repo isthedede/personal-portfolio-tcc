@@ -50,7 +50,7 @@ const CTASection = () => {
         </p>
         <Link 
           to="/contato" 
-          className="bg-white text-toyama-orange px-8 py-3 rounded-md inline-flex items-center hover:bg-toyama-beige transition-colors"
+          className="bg-white text-toyama-orange px-6 h-11 rounded-lg inline-flex items-center justify-center hover:bg-toyama-beige transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-toyama-orange"
         >
           Fale Conosco
         </Link>

@@ -80,10 +80,22 @@ const Header = () => {
         </div>
 
         <nav ref={navRef} className="hidden md:flex items-center space-x-8">
-          <NavLink to="/" end className={({isActive}) => `transition-colors ${isActive ? 'text-toyama-orange' : 'text-toyama-brown hover:text-toyama-orange'}`}>Início</NavLink>
-          <NavLink to="/produtos" className={({isActive}) => `transition-colors ${isActive ? 'text-toyama-orange' : 'text-toyama-brown hover:text-toyama-orange'}`}>Produtos</NavLink>
-          <NavLink to="/sobre" className={({isActive}) => `transition-colors ${isActive ? 'text-toyama-orange' : 'text-toyama-brown hover:text-toyama-orange'}`}>Sobre Mim</NavLink>
-          <NavLink to="/contato" className={({isActive}) => `transition-colors ${isActive ? 'text-toyama-orange' : 'text-toyama-brown hover:text-toyama-orange'}`}>Fale Comigo</NavLink>
+          <NavLink to="/" end className={({isActive}) => `group relative transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-toyama-orange focus-visible:rounded-sm ${isActive ? 'text-toyama-orange' : 'text-toyama-brown hover:text-toyama-orange'}`}>
+            <span className="py-1">Início</span>
+            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-toyama-orange w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+          </NavLink>
+          <NavLink to="/produtos" className={({isActive}) => `group relative transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-toyama-orange focus-visible:rounded-sm ${isActive ? 'text-toyama-orange' : 'text-toyama-brown hover:text-toyama-orange'}`}>
+            <span className="py-1">Produtos</span>
+            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-toyama-orange w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+          </NavLink>
+          <NavLink to="/sobre" className={({isActive}) => `group relative transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-toyama-orange focus-visible:rounded-sm ${isActive ? 'text-toyama-orange' : 'text-toyama-brown hover:text-toyama-orange'}`}>
+            <span className="py-1">Sobre Mim</span>
+            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-toyama-orange w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+          </NavLink>
+          <NavLink to="/contato" className={({isActive}) => `group relative transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-toyama-orange focus-visible:rounded-sm ${isActive ? 'text-toyama-orange' : 'text-toyama-brown hover:text-toyama-orange'}`}>
+            <span className="py-1">Fale Comigo</span>
+            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-toyama-orange w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+          </NavLink>
         </nav>
 
         <div ref={socialRef} className="hidden md:flex items-center space-x-4">
