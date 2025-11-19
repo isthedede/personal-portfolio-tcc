@@ -4,7 +4,7 @@
 
 Um portfólio moderno e responsivo desenvolvido com React, TypeScript e Tailwind CSS.
 
-## 🚀 Tecnologias
+##  Tecnologias
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
@@ -15,14 +15,14 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [shadcn/ui](https://ui.shadcn.com/)
 - [React Router DOM](https://reactrouter.com/)
 
-## 📋 Pré-requisitos
+##  Pré-requisitos
 
 Antes de começar, você precisa ter instalado em sua máquina:
 
 - [Node.js](https://nodejs.org/) (versão 18 ou superior)
 - [npm](https://www.npmjs.com/) (geralmente vem com o Node.js)
 
-## 🔧 Instalação
+##  Instalação
 
 1. Clone o repositório
 ```bash
@@ -49,14 +49,14 @@ npm run dev
 http://localhost:5173
 ```
 
-## 🛠️ Scripts Disponíveis
+##  Scripts Disponíveis
 
 - `npm run dev` - Inicia o servidor de desenvolvimento
 - `npm run build` - Cria a versão de produção
 - `npm run preview` - Visualiza a versão de produção localmente
 - `npm run lint` - Executa a verificação de código
 
-## 📦 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 src/
@@ -67,7 +67,7 @@ src/
   └── styles/        # Arquivos de estilo
 ```
 
-## ✨ Recursos e funcionalidades
+##  Recursos e funcionalidades
 
 - Seções principais de portfólio: sobre, projetos, habilidades, depoimentos e contato
 - Layout totalmente responsivo (mobile-first) com Tailwind CSS
@@ -76,7 +76,7 @@ src/
 - Navegação com React Router
 - Configuração de build ágil com Vite
 
-## ♿ Acessibilidade e SEO
+##  Acessibilidade e SEO
 
 - Estrutura semântica de HTML para leitores de tela
 - Suporte a navegação por teclado nos componentes de UI
@@ -84,7 +84,7 @@ src/
 - Cores com bom contraste via Tailwind (classes utilitárias)
 - Metatags básicas para SEO e compartilhamento (title, description, Open Graph)
 
-## 🙏 Créditos
+##  Créditos
 
 - Framework: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
 - Linguagem: [TypeScript](https://www.typescriptlang.org/)
