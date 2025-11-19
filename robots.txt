@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Adicione a linha abaixo após publicar o site com a URL final
+# Sitemap: https://SEU-DOMINIO/sitemap.xml
+
+
